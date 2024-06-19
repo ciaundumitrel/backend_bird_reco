@@ -12,6 +12,7 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     permission_classes = (AllowAny,)
@@ -28,8 +29,8 @@ class RegisterView(generics.CreateAPIView):
         user = serializer.save()
         Token.objects.create(user=user)  # Create a token for the new user
 
-@method_decorator(csrf_exempt, name='dispatch')
 
+@method_decorator(csrf_exempt, name='dispatch')
 class LoginView(APIView):
     permission_classes = (AllowAny,)
 

@@ -29,7 +29,7 @@ class Species(models.Model):
     description = models.TextField(blank=True, null=True)
     habitat = models.CharField(max_length=200, blank=True, null=True)
     population_status = models.CharField(max_length=100, blank=True, null=True)
-    image = models.ImageField(upload_to='birds/', blank=True, null=True)
+    image = models.CharField(max_length=128, blank=True, null=True)
 
     def __str__(self):
         return self.common_name

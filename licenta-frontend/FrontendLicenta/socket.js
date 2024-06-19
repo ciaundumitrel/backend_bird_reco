@@ -1,7 +1,7 @@
 import { io } from 'socket.io-client';
 import * as FileSystem from "expo-file-system";
 
-export const socket = io('http://192.168.1.3:8000'); // use the IP address of your machine
+export const socket = io('http://192.168.100.11:8003'); // use the IP address of your machine
 
 
 const sleep = (ms) => {
